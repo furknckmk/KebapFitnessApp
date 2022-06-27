@@ -1,22 +1,30 @@
 /* eslint-disable prettier/prettier */
 import React, {useState} from 'react';
-import { View,Text } from 'react-native';
+import { View,Alert } from 'react-native';
 import Input from '../components/Input';
 import Button from '../components/Button';
-function MemberSign(){
-    const [userName, setUserName] = useState('');
-    const [userSurName, setUserSurName] = useState('');
-    const [userAge, setUserAge] = useState('');
-    const [userEmail, setUserEmail] = useState('');
+function MemberSign({navigation}){
+    const [userName, setUserName] = useState(null);
+    const [userSurName, setUserSurName] = useState(null);
+    const [userAge, setUserAge] = useState(null);
+    const [userEmail, setUserEmail] = useState(null);
 
 function handleSubmit(){
+    if ( !userName ||
+        !userSurName ||
+        !userAge ||
+        !userEmail) {
+            Alert.alert('Kebap Fitness Salonu','Bilgiler Bos Birakilamaz');
+            return;
+
+    }
    const user = {
     userName,
     userSurName,
     userAge,
     userEmail,
    };
-console.log(user);
+navigation.navigate("MemberResaultScreen",{user});
 
 }
 

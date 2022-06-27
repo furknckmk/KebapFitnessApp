@@ -6,7 +6,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from './Pages/WelcomeScreen';
 import MemberSign from './Pages/MemberSign';
-
+import MemberResault from './Pages/MemberResault';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +18,7 @@ export default function App() {
       }}>
         <Stack.Screen name="WelcomeScreen" component={WelcomeScreen}/>
         <Stack.Screen name="MemberSignScreen" component={MemberSign} />
+        <Stack.Screen name="MemberResaultScreen" component={MemberResault} />
       </Stack.Navigator>
     </NavigationContainer>
   );
